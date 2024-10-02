@@ -1,0 +1,39 @@
+﻿@model Category
+
+
+<form method="post">
+    <input asp-for="ID" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Category</h2>
+            <hr />
+        </div>
+    </div>
+    @*<div asp-validation-summary = "ModelOnly"></div>*@
+
+    <div class="mb-3 row p-1">
+        <label asp-for="Name" class="p-0"></label><!--Name here stands for the category variable name-->
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" disabled class="text-danger"></span><!--displays the error message if conditions in category model arent met-->
+    </div>
+
+    <div class="mb-3 row p-1">
+        <label asp-for="DisplayOrder"></label>
+        <input asp-for="DisplayOrder" class="form-control" />
+        <span asp-validation-for="DisplayOrder" disabled class="text-danger"></span>
+    </div>
+
+    <div class="row">
+
+        <div class="col-6 col-md-3">
+            <button type="submit" class="btn btn-danger" style="width: 150px">Delete</button>
+        </div>
+        <div class="col-6 col-md-3">
+            <a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary border form-control" style="width:150px"> Back to List</a>
+        </div>
+
+    </div>
+</form>
+
+
+

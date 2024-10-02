@@ -1,0 +1,45 @@
+﻿@model Category
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Category</h2>
+            <hr />
+        </div>
+        </div>
+    @*<div asp-validation-summary = "ModelOnly"></div>*@
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Name" class="p-0"></label><!--Name here stands for the category variable name-->
+            <input asp-for ="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span><!--displays the error message if conditions in category model arent met-->
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="DisplayOrder"></label>
+            <input asp-for="DisplayOrder" class="form-control" />
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary" style="width: 150px">Create</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary border form-control" style="width:150px"> Back to List</a>
+            </div>
+
+        </div>
+</form>
+
+<!--client side validation
+This defines a section called Scripts that you can use to inject JavaScript or script-related content into the page.
+Sections are placeholders in a layout that allow specific content to be inserted into different parts of the layout.
+The Scripts section is typically reserved for any JavaScript code or script files that a specific view might need.
+-->
+@section Scripts{
+    @*will search for this name in the shared folder which is the default location for any partial view*@
+    <partial name = "_ValidationScriptsPartial"/> 
+}
+

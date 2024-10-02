@@ -1,0 +1,22 @@
+﻿<!--success notif-->
+@if (TempData["success"] != null)
+{
+    @*the following will display the message if tempdata was successful ie: data was successfully created, updated, or deleted*@
+    <script src="~/lib/jquery/dist/jquery.min.js"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"> </script>
+    <script type="text/javascript">
+        // Display an info toast with no title
+        toastr.success('@TempData["success"]');
+    </script>
+}
+
+<!--error notif-->
+@if (TempData["error"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"> </script>
+    <script type="text/javascript">
+        // Display an info toast with no title
+        toastr.error('@TempData["error"]');
+    </script>
+}
